@@ -1,4 +1,4 @@
-package com.aquamind;
+package app.aquamind;
 
 import com.facebook.react.ReactActivity;
 
