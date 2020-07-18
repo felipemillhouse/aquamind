@@ -1,10 +1,7 @@
-import Constants from 'expo-constants';
-import * as Notifications from 'expo-notifications';
-import {Notification} from 'expo-notifications';
-import {Subscription} from '@unimodules/core';
-import * as Permissions from 'expo-permissions';
-import React, {useState, useEffect, useRef} from 'react';
-import {Text, View, Button, Platform, Alert} from 'react-native';
+import { Constants, Permissions } from 'react-native-unimodules'
+import * as Notifications from 'expo-notifications'
+import React, { useState, useEffect, useRef } from 'react'
+import { Text, View, Button, Platform, Alert } from 'react-native'
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -12,39 +9,35 @@ Notifications.setNotificationHandler({
     shouldPlaySound: false,
     shouldSetBadge: false,
   }),
-});
+})
 
 export default function App() {
-  const [expoPushToken, setExpoPushToken] = useState('');
-  const [notification, setNotification] = useState<Notification>();
-  const notificationListener = useRef<Subscription | null>(null);
-  const responseListener = useRef<Subscription>();
+  const [expoPushToken, setExpoPushToken] = useState('')
+  const [notification, setNotification] = useState<Notifications.Notification>()
+  const notificationListener = useRef()
+  const responseListener = useRef()
 
   useEffect(() => {
-    registerForPushNotificationsAsync().then((token) => {
-      console.log('registered');
+    registerForPushNotificationsAsync().then(token => {
+      console.log('registered')
       if (token) {
-        setExpoPushToken(token);
+        setExpoPushToken(token)
       }
-    });
+    })
 
-    notificationListener.current = Notifications.addNotificationReceivedListener(
-      (response) => {
-        setNotification(response);
-      },
-    );
+    notificationListener.current = Notifications.addNotificationReceivedListener(response => {
+      setNotification(response)
+    })
 
-    responseListener.current = Notifications.addNotificationResponseReceivedListener(
-      (response) => {
-        console.log(response);
-      },
-    );
+    responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
+      console.log(response)
+    })
 
     return () => {
-      Notifications.removeNotificationSubscription(notificationListener);
-      Notifications.removeNotificationSubscription(responseListener);
-    };
-  }, []);
+      Notifications.removeNotificationSubscription(notificationListener)
+      Notifications.removeNotificationSubscription(responseListener)
+    }
+  }, [])
 
   return (
     <View
@@ -52,15 +45,23 @@ export default function App() {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
-      }}>
-      <Text>Your expo push token: {expoPushToken}</Text>
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+      }}
+    >
+      <Text>
+        Your expo push token:
+        {expoPushToken}
+      </Text>
+      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text>
-          Title: {notification && notification.request.content.title}{' '}
+          Title:
+          {notification && notification.request.content.title}
         </Text>
-        <Text>Body: {notification && notification.request.content.body}</Text>
         <Text>
-          Data:{' '}
+          Body:
+          {notification && notification.request.content.body}
+        </Text>
+        <Text>
+          Data:
           {notification && JSON.stringify(notification.request.content.data)}
         </Text>
       </View>
@@ -68,12 +69,12 @@ export default function App() {
         title="Press to Send Notification"
         onPress={async () => {
           if (expoPushToken) {
-            await sendPushNotification(expoPushToken);
+            await sendPushNotification(expoPushToken)
           }
         }}
       />
     </View>
-  );
+  )
 }
 
 // Can use this function below, OR use Expo's Push Notification Tool-> https://expo.io/dashboard/notifications
@@ -83,8 +84,8 @@ async function sendPushNotification(expoPushToken: string) {
     sound: 'default',
     title: 'Original Title',
     body: 'And here is the body!',
-    data: {data: 'goes here'},
-  };
+    data: { data: 'goes here' },
+  }
 
   await fetch('https://exp.host/--/api/v2/push/send', {
     method: 'POST',
@@ -94,32 +95,30 @@ async function sendPushNotification(expoPushToken: string) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(message),
-  });
+  })
 }
 
 async function registerForPushNotificationsAsync() {
-  let token;
+  let token
   if (Constants.isDevice) {
-    const {status: existingStatus} = await Permissions.getAsync(
-      Permissions.NOTIFICATIONS,
-    );
-    let finalStatus = existingStatus;
+    const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS)
+    let finalStatus = existingStatus
     if (existingStatus !== 'granted') {
-      const {status} = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-      finalStatus = status;
+      const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS)
+      finalStatus = status
     }
     if (finalStatus !== 'granted') {
-      Alert.alert('Failed to get push token for push notification!');
-      return;
+      Alert.alert('Failed to get push token for push notification!')
+      return
     }
     token = (
       await Notifications.getExpoPushTokenAsync({
         experienceId: '@felipemillhouse/aquamind-care',
       })
-    ).data;
-    console.log(token);
+    ).data
+    console.log(token)
   } else {
-    Alert.alert('Must use physical device for Push Notifications');
+    Alert.alert('Must use physical device for Push Notifications')
   }
 
   if (Platform.OS === 'android') {
@@ -128,8 +127,8 @@ async function registerForPushNotificationsAsync() {
       importance: Notifications.AndroidImportance.MAX,
       vibrationPattern: [0, 250, 250, 250],
       lightColor: '#FF231F7C',
-    });
+    })
   }
 
-  return token;
+  return token
 }
