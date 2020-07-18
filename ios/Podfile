@@ -9,6 +9,8 @@ target 'Aquamind' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
+  # it's for add firebase on project
+  pod 'Firebase/Analytics'
 
   target 'AquamindTests' do
     inherit! :complete

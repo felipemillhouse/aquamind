@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "android": "npx react-native run-android",
-    "ios": "npx react-native run-ios",
+    "ios": "npx react-native run-ios --simulator=\"iPhone 11 Pro\"",
     "start": "react-native start",
     "pod": "npx pod-install",
     "images": "npx expo-optimize",
     "resetMetro": "watchman watch-del-all && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-map-*"
   },
   "dependencies": {
+    "expo-notifications": "^0.4.0",
     "expo-updates": "^0.2.11",
     "react": "16.13.1",
     "react-native": "0.63.0",
