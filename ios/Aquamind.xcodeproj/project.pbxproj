@@ -53,6 +53,7 @@
 		2D02E47B1E0B4A5D006451C7 /* Aquamind-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquamind-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Aquamind-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aquamind-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Aquamind/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Aquamind.entitlements; path = Aquamind/Aquamind.entitlements; sourceTree = "<group>"; };
 		920AE01196CF291853BA329C /* Pods-Aquamind-AquamindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind-AquamindTests.release.xcconfig"; path = "Target Support Files/Pods-Aquamind-AquamindTests/Pods-Aquamind-AquamindTests.release.xcconfig"; sourceTree = "<group>"; };
 		A73D6623F5213E78782B8867 /* Pods-Aquamind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind.release.xcconfig"; path = "Target Support Files/Pods-Aquamind/Pods-Aquamind.release.xcconfig"; sourceTree = "<group>"; };
 		D5B2C53165757B8DB1E88994 /* Pods-Aquamind-AquamindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind-AquamindTests.debug.xcconfig"; path = "Target Support Files/Pods-Aquamind-AquamindTests/Pods-Aquamind-AquamindTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 		13B07FAE1A68108700A75B9A /* Aquamind */ = {
 			isa = PBXGroup;
 			children = (
+				8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -593,7 +595,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = Aquamind/Aquamind.entitlements;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 266U6N9K96;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Aquamind/Info.plist;
@@ -618,7 +621,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = Aquamind/Aquamind.entitlements;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 266U6N9K96;
 				INFOPLIST_FILE = Aquamind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
