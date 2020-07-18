@@ -1,4 +1,9 @@
 {
   "name": "Aquamind",
-  "displayName": "Aquamind"
+  "displayName": "Aquamind",
+  "expo": {
+    "name": "Aquamind",
+    "slug": "aquamind-care",
+    "sdkVersion": "38.0.0"
+  }
 }
