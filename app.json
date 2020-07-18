@@ -1,4 +1,16 @@
 {
   "name": "Aquamind",
-  "displayName": "Aquamind"
+  "displayName": "Aquamind",
+  "expo": {
+    "name": "Aquamind",
+    "slug": "aquamind-care",
+    "android": {
+      "package": "app.aquamind",
+      "googleServicesFile": "./android/app/google-services.json",
+      "useNextNotificationsApi": true
+    },
+    "ios": {
+      "bundleIdentifier": "app.aquamind"
+    }
+  }
 }

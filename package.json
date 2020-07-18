@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios --simulator=\"iPhone 12 Pro\"",
     "start": "react-native start",
     "pod": "npx pod-install"
   },
   "dependencies": {
+    "expo-notifications": "^0.4.0",
     "react": "16.13.1",
     "react-native": "0.63.0",
     "react-native-unimodules": "^0.10.1"

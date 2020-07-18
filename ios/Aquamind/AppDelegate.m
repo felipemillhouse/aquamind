@@ -1,3 +1,4 @@
+@import Firebase;
 #import "AppDelegate.h"
 
 #import <React/RCTBridge.h>
@@ -37,11 +38,11 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-#ifdef FB_SONARKIT_ENABLED
-  InitializeFlipper(application);
-#endif
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [FIRApp configure];
+  #ifdef FB_SONARKIT_ENABLED
+    InitializeFlipper(application);
+  #endif
 
 self.moduleRegistryAdapter = [[UMModuleRegistryAdapter alloc] initWithModuleRegistryProvider:[[UMModuleRegistryProvider alloc] init]];
 
