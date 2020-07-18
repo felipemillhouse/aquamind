@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios",
     "start": "react-native start",
-    "pod": "npx pod-install"
+    "pod": "npx pod-install",
+    "images": "npx expo-optimize",
+    "resetMetro": "watchman watch-del-all && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-map-*"
   },
   "dependencies": {
+    "expo-updates": "^0.2.11",
     "react": "16.13.1",
     "react-native": "0.63.0",
     "react-native-unimodules": "^0.10.1"
