@@ -11,6 +11,9 @@ PODS:
   - EXFileSystem (9.0.1):
     - UMCore
     - UMFileSystemInterface
+  - EXFont (8.2.1):
+    - UMCore
+    - UMFontInterface
   - EXImageLoader (1.1.1):
     - React-Core
     - UMCore
@@ -452,6 +455,7 @@ DEPENDENCIES:
   - EXApplication (from `../node_modules/expo-application/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
+  - EXFont (from `../node_modules/expo-font/ios`)
   - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
   - EXNotifications (from `../node_modules/expo-notifications/ios`)
   - EXPermissions (from `../node_modules/expo-permissions/ios`)
@@ -565,6 +569,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-constants/ios"
   EXFileSystem:
     :path: "../node_modules/expo-file-system/ios"
+  EXFont:
+    :path: "../node_modules/expo-font/ios"
   EXImageLoader:
     :path: "../node_modules/expo-image-loader/ios"
   EXNotifications:
@@ -678,6 +684,7 @@ SPEC CHECKSUMS:
   EXApplication: d7ccb60c33fa4d506967ff6adde42a0f872d69ad
   EXConstants: f907b3b6ce16e20d1750f22af1e095e924574bcb
   EXFileSystem: 76875135b61708b9afa7e6a89b72a60ba0fdfa20
+  EXFont: d6cabb73989fc29296972c52915a023f46b2c7f5
   EXImageLoader: 02ca02c9cd5cc8a97b423207a73a791e0a86bea5
   EXNotifications: f0f89e5ba8ef5ad7568b9f1e65031a6f40fbd313
   EXPermissions: 80ac3acbdb145930079810fe5b08c022b3428aa8
