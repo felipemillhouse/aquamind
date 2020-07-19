@@ -17,5 +17,4 @@ export const Spinner = styled(ActivityIndicator)<SpinnerInputProps>`
   right: 10px;
   align-self: flex-end;
   position: absolute;
-  display: ${props => (props.loading ? 'flex' : 'none')};
 `
