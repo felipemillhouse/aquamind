@@ -7,8 +7,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { persistor } from 'store'
 
 import { RootState } from 'store/rootReducer'
-import { showDrawer, setAuthenticated } from 'store/config/actions'
-import { logout } from 'store/user/actions'
+import UserRTK from 'store/user'
+import TanksRTK from 'store/tanks'
+import PlantsRTK from 'store/plants'
+import FertilizersRTK from 'store/fertilizers'
+import ConfigRTK from 'store/config'
 import {
   MainView,
   DialogContent,
@@ -28,14 +31,18 @@ const BottomDrawer: React.FC = () => {
   const hide = async (toScreen?: string) => {
     if (portalDrawer.current?.fadeOut) portalDrawer.current.fadeOut(300)
     if (contentDrawer.current?.fadeOutDownBig) await contentDrawer.current.fadeOutDownBig(300)
-    dispatch(showDrawer(false))
+    dispatch(ConfigRTK.actions.showDrawer(false))
     if (toScreen) navigation.navigate(toScreen)
   }
 
   const runLogout = () => {
-    dispatch(showDrawer(false))
-    dispatch(setAuthenticated(false))
-    dispatch(logout())
+    dispatch(ConfigRTK.actions.showDrawer(false))
+    dispatch(ConfigRTK.actions.setAuthenticated(false))
+    dispatch(UserRTK.actions.logout())
+    dispatch(TanksRTK.actions.logout())
+    dispatch(PlantsRTK.actions.logout())
+    dispatch(FertilizersRTK.actions.logout())
+    dispatch(ConfigRTK.actions.logout())
     persistor.purge()
     navigation.dispatch(state => {
       return CommonActions.reset({ routes: state.routes, index: 0 })

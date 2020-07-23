@@ -5,7 +5,7 @@ import { View } from 'react-native'
 import _ from 'lodash'
 
 import { AddPlantProps } from 'routes'
-import { setAlert } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import { RootState } from 'store/rootReducer'
 import theme from 'View/@Theme'
 import { MainView, Searchbar, ScrollView, Text, Icon, RowView } from './styles'
@@ -40,7 +40,7 @@ const AddPlant = ({ route, navigation }: AddPlantProps) => {
     const alreadyHas = _.find(plantData, { id })
     if (plantData?.length > 0 && !!alreadyHas) {
       dispatch(
-        setAlert({
+        ConfigRTK.actions.setAlert({
           visible: true,
           alertTitle: 'Oops!',
           alertMessage: `You already have ${name} added to your tank`,
@@ -50,7 +50,7 @@ const AddPlant = ({ route, navigation }: AddPlantProps) => {
       return
     }
     dispatch(
-      setAlert({
+      ConfigRTK.actions.setAlert({
         visible: true,
         alertTitle: 'Add New Plant',
         alertMessage: `Do You want to add ${name} to your tank?`,

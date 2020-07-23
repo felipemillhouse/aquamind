@@ -5,7 +5,7 @@ import _ from 'lodash'
 
 import { RootState } from 'store/rootReducer'
 import theme from 'View/@Theme'
-import { hideAlert } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 
 import { Button } from './styles'
 
@@ -28,14 +28,20 @@ const Alert: React.FC = () => {
 
   return (
     <Portal>
-      <Dialog visible={config.alert.visible} onDismiss={() => dispatch(hideAlert())}>
+      <Dialog
+        visible={config.alert.visible}
+        onDismiss={() => dispatch(ConfigRTK.actions.hideAlert())}
+      >
         <Dialog.Title>{config.alert.alertTitle || 'Alert'}</Dialog.Title>
         <Dialog.Content>
           <Paragraph>{config.alert.alertMessage}</Paragraph>
         </Dialog.Content>
         <Dialog.Actions>
           {!_.isEmpty(_.trim(config.alert.cancelText)) && (
-            <Button color={theme.colors.error} onPress={() => dispatch(hideAlert())}>
+            <Button
+              color={theme.colors.error}
+              onPress={() => dispatch(ConfigRTK.actions.hideAlert())}
+            >
               {_.trim(config.alert.cancelText)}
             </Button>
           )}
@@ -44,7 +50,7 @@ const Alert: React.FC = () => {
               if (config.alert.okPress) {
                 config.alert.okPress()
               }
-              dispatch(hideAlert())
+              dispatch(ConfigRTK.actions.hideAlert())
             }}
           >
             {!_.isEmpty(_.trim(config.alert.okText)) ? _.trim(config.alert.okText) : 'Done'}

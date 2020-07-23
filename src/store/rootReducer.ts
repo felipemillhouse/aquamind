@@ -1,17 +1,17 @@
 import { combineReducers } from 'redux'
 
-import user from './user/reducer'
-import config from './config/reducer'
-import tanks from './tanks/reducer'
-import plants from './plants/reducer'
-import fertilizers from './fertilizers/reducer'
+import user from './user'
+import tanks from './tanks'
+import plants from './plants'
+import fertilizers from './fertilizers'
+import config from './config'
 
 export const rootReducer = combineReducers({
-  user,
-  config,
-  tanks,
-  plants,
-  fertilizers,
+  user: user.reducer,
+  config: config.reducer,
+  tanks: tanks.reducer,
+  plants: plants.reducer,
+  fertilizers: fertilizers.reducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>

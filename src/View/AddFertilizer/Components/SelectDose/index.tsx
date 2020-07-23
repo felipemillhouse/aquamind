@@ -6,7 +6,7 @@ import _ from 'lodash'
 import * as Yup from 'yup'
 
 import { YupErrorsType, checkValidation } from 'helper'
-import { setAlert } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import Input from 'View/@Components/Input'
 import theme from 'View/@Theme'
 
@@ -55,7 +55,7 @@ const SelectDose = ({
 
     if (fertilizerData?.length > 0 && !!_.find(fertilizerData, { id: fertilizerId })) {
       dispatch(
-        setAlert({
+        ConfigRTK.actions.setAlert({
           visible: true,
           alertTitle: 'Oops!',
           alertMessage: `You already have ${fertilizerName} added to your tank`,

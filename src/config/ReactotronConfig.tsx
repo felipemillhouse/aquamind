@@ -5,7 +5,6 @@
 import Reactotron from 'reactotron-react-native'
 // import ReactotronFlipper from 'reactotron-react-native/dist/flipper'
 import { reactotronRedux } from 'reactotron-redux'
-import sagaPlugin from 'reactotron-redux-saga'
 import AsyncStorage from '@react-native-community/async-storage'
 
 declare global {
@@ -23,7 +22,6 @@ if (__DEV__) {
     asyncStorage: {},
   })
   Reactotron.use(reactotronRedux())
-  Reactotron.use(sagaPlugin({ except: [''] }))
   Reactotron.connect()
   Reactotron.clear!()
 

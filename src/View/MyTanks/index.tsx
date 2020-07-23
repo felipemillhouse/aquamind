@@ -6,11 +6,12 @@ import { View } from 'react-native'
 import { SwipeRow } from 'react-native-swipe-list-view'
 import moment from 'moment'
 
+import { getTanks } from 'API/tanks'
+import TanksRTK from 'store/tanks'
 import { MyTanksProps } from 'routes'
 import theme from 'View/@Theme'
 import AvatarImg from 'assets/Avatar.png'
-import { setAlert } from 'store/config/actions'
-import { getTanks } from 'store/tanks/actions'
+import ConfigRTK from 'store/config'
 import { RootState } from 'store/rootReducer'
 import Drawer from 'View/@Components/Drawer'
 import FlatListItem from './Components/FlatListItem'
@@ -35,13 +36,21 @@ const MyTanks = ({ navigation }: MyTanksProps) => {
   const user = useSelector((state: RootState) => state.user)
 
   useEffect(() => {
-    if (!tanks.length) dispatch(getTanks(1))
+    async function fetch() {
+      if (!tanks.length) {
+        dispatch(ConfigRTK.actions.setLoading({ visible: true }))
+        const response = await getTanks(1)
+        dispatch(ConfigRTK.actions.setLoading({ visible: false }))
+        if (response) dispatch(TanksRTK.actions.setTanks(response))
+      }
+    }
+    fetch()
   }, [dispatch, tanks.length])
 
   const deleteHandler = (id: number) => {
     const tankClicked = _.find(tanks, { id })
     dispatch(
-      setAlert({
+      ConfigRTK.actions.setAlert({
         visible: true,
         alertTitle: 'Delete Tank',
         alertMessage: `Are you sure that you want to delete the ${tankClicked?.title} tank and their photos?`,

@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = ({ error, label, loading, ...props }) => {
         {...props}
         extraMargin={!!error}
       />
-      {!loading && <Spinner color={theme.colors.primary} />}
+      {loading && <Spinner color={theme.colors.primary} />}
       {error && (
         <HelperText type="error" visible={hasError}>
           {error}
