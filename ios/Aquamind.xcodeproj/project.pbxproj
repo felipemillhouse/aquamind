@@ -17,6 +17,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* AquamindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AquamindTests.m */; };
 		6DE1035BF7DE317FE9E328C2 /* libPods-Aquamind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B32E30124374EF66F22F144 /* libPods-Aquamind.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8F9EDFFD24C94B5500A23FF7 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */; };
 		8FEFC69124C36DB00004DE4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */; };
 		C5A2E9E15985BB9A5A338FCD /* libPods-Aquamind-AquamindTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36FD6641BD6D81442298FE /* libPods-Aquamind-AquamindTests.a */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* AquamindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AquamindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* AquamindTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AquamindTests.m; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 		2D02E4901E0B4A5D006451C7 /* Aquamind-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aquamind-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Aquamind/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Aquamind.entitlements; path = Aquamind/Aquamind.entitlements; sourceTree = "<group>"; };
+		8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		920AE01196CF291853BA329C /* Pods-Aquamind-AquamindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind-AquamindTests.release.xcconfig"; path = "Target Support Files/Pods-Aquamind-AquamindTests/Pods-Aquamind-AquamindTests.release.xcconfig"; sourceTree = "<group>"; };
 		A73D6623F5213E78782B8867 /* Pods-Aquamind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind.release.xcconfig"; path = "Target Support Files/Pods-Aquamind/Pods-Aquamind.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +121,7 @@
 			children = (
 				8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */,
 				8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -328,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FEFC69124C36DB00004DE4C /* GoogleService-Info.plist in Resources */,
+				8F9EDFFD24C94B5500A23FF7 /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
