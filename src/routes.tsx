@@ -9,7 +9,7 @@ import {
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { IconButton } from 'react-native-paper'
 
-import { showDrawer } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import Feed from 'View/Feed'
 import Knowledge from 'View/Knowledge'
 import MyTanks from 'View/MyTanks'
@@ -189,7 +189,7 @@ const Routes: React.FC = () => {
             <IconButton
               icon="menu"
               color={theme.colors.surface}
-              onPress={() => dispatch(showDrawer(true))}
+              onPress={() => dispatch(ConfigRTK.actions.showDrawer(true))}
             />
           ),
         }}
@@ -216,7 +216,7 @@ const Routes: React.FC = () => {
             <IconButton
               icon="menu"
               color={theme.colors.surface}
-              onPress={() => dispatch(showDrawer(true))}
+              onPress={() => dispatch(ConfigRTK.actions.showDrawer(true))}
             />
           ),
         }}
@@ -248,7 +248,7 @@ const Routes: React.FC = () => {
             <IconButton
               icon="menu"
               color={theme.colors.surface}
-              onPress={() => dispatch(showDrawer(true))}
+              onPress={() => dispatch(ConfigRTK.actions.showDrawer(true))}
             />
           ),
         }}

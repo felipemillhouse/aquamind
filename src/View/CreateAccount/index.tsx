@@ -4,7 +4,7 @@ import { Platform } from 'react-native'
 import * as Yup from 'yup'
 
 import { CreateAccountProps } from 'routes'
-import { setLoading } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import Input from 'View/@Components/Input'
 import headerImage from 'assets/appImages/loginHeader.png'
 import { YupErrorsType, checkValidation } from 'helper'
@@ -47,17 +47,17 @@ const CreateAccount = ({ navigation }: CreateAccountProps) => {
   })
 
   const createAccount = async () => {
-    dispatch(setLoading(true))
+    dispatch(ConfigRTK.actions.setLoading({ visible: true }))
 
     const resultValidation = await checkValidation(errors, formValues, validation)
     if (resultValidation) {
       setErrors(resultValidation)
-      dispatch(setLoading(false))
+      dispatch(ConfigRTK.actions.setLoading({ visible: false }))
       return
     }
     setErrors({})
     // execute create account process
-    dispatch(setLoading(false))
+    dispatch(ConfigRTK.actions.setLoading({ visible: false }))
   }
 
   return (

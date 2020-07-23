@@ -5,10 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker'
 import _ from 'lodash'
 
-import { getTanks } from 'store/tanks/actions'
-
 import AvatarImg from 'assets/Avatar.png'
-import { setAlert, setLoading } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import { ProfileProps } from 'routes'
 import { RootState } from 'store/rootReducer'
 import Input from 'View/@Components/Input'
@@ -49,7 +47,7 @@ const Profile = ({ navigation }: ProfileProps) => {
     ImagePicker.showImagePicker(options, async response => {
       if (response.error) {
         dispatch(
-          setAlert({
+          ConfigRTK.actions.setAlert({
             visible: true,
             alertTitle: 'Oops! Something went wrong',
             alertMessage: response.error,
@@ -63,19 +61,19 @@ const Profile = ({ navigation }: ProfileProps) => {
   }
 
   const Save = async () => {
-    dispatch(setLoading(true))
+    dispatch(ConfigRTK.actions.setLoading({ visible: true }))
 
     const resultValidation = await checkValidation(errors, formValues, validation)
 
     if (resultValidation) {
       setErrors(resultValidation)
-      dispatch(setLoading(false))
+      dispatch(ConfigRTK.actions.setLoading({ visible: false }))
       return
     }
     setErrors({})
     // save data
 
-    dispatch(setLoading(false))
+    dispatch(ConfigRTK.actions.setLoading({ visible: false }))
   }
 
   const checkUserName = useCallback(

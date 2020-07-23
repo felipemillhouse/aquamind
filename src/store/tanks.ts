@@ -1,11 +1,4 @@
-export const Actions = {
-  TANKS_GET_TANKS: 'TANKS_GET_TANKS',
-  TANKS_SET_TANKS: 'TANKS_SET_TANKS',
-}
-export type ActionTypes =
-  | { type: 'LOGOUT' }
-  | { type: 'TANKS_GET_TANKS'; userId: number }
-  | { type: 'TANKS_SET_TANKS'; tanks: TanksState[] }
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type TanksState = {
   id: number
@@ -39,3 +32,13 @@ export type TanksState = {
     dose: string
   }[]
 }
+const initialState: TanksState[] = []
+
+export default createSlice({
+  name: 'tanks',
+  initialState,
+  reducers: {
+    logout: () => initialState,
+    setTanks: (state, action: PayloadAction<TanksState[]>) => action.payload,
+  },
+})

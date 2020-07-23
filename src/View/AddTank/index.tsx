@@ -13,9 +13,11 @@ import EmptyImage from 'assets/coverVoidImage.png'
 import TankMeasurement from 'assets/tankMeasurement.png'
 import FakeLoadingScreen from 'View/@Components/FakeLoadingScreen'
 import theme from 'View/@Theme'
-import { setAlert, setLoading } from 'store/config/actions'
-import { getPlants } from 'store/plants/actions'
-import { getFertilizers } from 'store/fertilizers/actions'
+import ConfigRTK from 'store/config'
+import { getPlants } from 'API/plants'
+import { getFertilizers } from 'API/fertilizers'
+import PlantsRTK from 'store/plants'
+import FertilizersRTK from 'store/fertilizers'
 import { RootState } from 'store/rootReducer'
 import { YupErrorsType, checkValidation } from 'helper'
 import Input from 'View/@Components/Input'
@@ -142,24 +144,33 @@ const AddTank = ({ navigation, route }: addTankProps) => {
 
   useEffect(() => {
     if (route.params?.tankId) fetchState(route.params.tankId)
-    if (!plants.length) dispatch(getPlants())
-    if (!fertilizers.length) dispatch(getFertilizers())
+    async function fetch() {
+      if (!plants.length) {
+        const response = await getPlants()
+        if (response) dispatch(PlantsRTK.actions.setPlants(response))
+      }
+      if (!fertilizers.length) {
+        const response = await getFertilizers()
+        if (response) dispatch(FertilizersRTK.actions.setFertilizers(response))
+      }
+    }
+    fetch()
   }, [dispatch, fertilizers.length, fetchState, plants.length, route.params])
 
   const Save = async () => {
-    dispatch(setLoading(true))
+    dispatch(ConfigRTK.actions.setLoading({ visible: true }))
 
     const resultValidation = await checkValidation(errors, formValues, validation)
 
     if (resultValidation) {
       setErrors(resultValidation)
-      dispatch(setLoading(false))
+      dispatch(ConfigRTK.actions.setLoading({ visible: false }))
       return
     }
     setErrors({})
     // save data
 
-    dispatch(setLoading(false))
+    dispatch(ConfigRTK.actions.setLoading({ visible: false }))
   }
 
   /** *************************************************
@@ -209,7 +220,7 @@ const AddTank = ({ navigation, route }: addTankProps) => {
         setFertilizerRender(newRender)
       }
       dispatch(
-        setAlert({
+        ConfigRTK.actions.setAlert({
           visible: true,
           alertTitle: 'Delete Fertilizer',
           alertMessage: `Are you sure that you want to delete ${
@@ -278,7 +289,7 @@ const AddTank = ({ navigation, route }: addTankProps) => {
         setPlantRender(newRender)
       }
       dispatch(
-        setAlert({
+        ConfigRTK.actions.setAlert({
           visible: true,
           alertTitle: 'Delete Plant',
           alertMessage: `Are you sure that you want to delete ${_.find(plantData, { id })?.name}?`,
@@ -313,7 +324,7 @@ const AddTank = ({ navigation, route }: addTankProps) => {
     ImagePicker.showImagePicker(options, async response => {
       if (response.error) {
         dispatch(
-          setAlert({
+          ConfigRTK.actions.setAlert({
             visible: true,
             alertTitle: 'Oops! Something went wrong',
             alertMessage: response.error,

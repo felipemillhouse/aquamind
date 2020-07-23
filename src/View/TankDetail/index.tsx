@@ -6,7 +6,7 @@ import _ from 'lodash'
 import AvatarImg from 'assets/Avatar.png'
 import { TankDetailProps } from 'routes'
 import { RootState } from 'store/rootReducer'
-import { setAlert } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import theme from 'View/@Theme'
 import ThumbPhoto from './Components/ThumbPhoto'
 import {
@@ -66,7 +66,7 @@ const TankDetail = ({ navigation, route }: TankDetailProps) => {
     ImagePicker.showImagePicker(options, async response => {
       if (response.error) {
         dispatch(
-          setAlert({
+          ConfigRTK.actions.setAlert({
             visible: true,
             alertTitle: 'Oops! Something went wrong',
             alertMessage: response.error,
@@ -77,7 +77,7 @@ const TankDetail = ({ navigation, route }: TankDetailProps) => {
         console.log({ response })
         if (response.height > response.width + 30) {
           dispatch(
-            setAlert({
+            ConfigRTK.actions.setAlert({
               visible: true,
               alertTitle: 'Oops! Vertical Image',
               alertMessage: 'Please, do not use vertical images',

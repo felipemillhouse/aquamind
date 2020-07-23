@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { Platform } from 'react-native'
 
 import { ForgotPasswordProps } from 'routes'
-import { setLoading } from 'store/config/actions'
+import ConfigRTK from 'store/config'
 import Input from 'View/@Components/Input'
 import headerImage from 'assets/appImages/loginHeader.png'
 import { YupErrorsType, checkValidation } from 'helper'
@@ -36,17 +36,17 @@ const ForgotPassword = ({ navigation }: ForgotPasswordProps) => {
   })
 
   const resetPassword = async () => {
-    dispatch(setLoading(true))
+    dispatch(ConfigRTK.actions.setLoading({ visible: true }))
 
     const resultValidation = await checkValidation(errors, formValues, validation)
     if (resultValidation) {
       setErrors(resultValidation)
-      dispatch(setLoading(false))
+      dispatch(ConfigRTK.actions.setLoading({ visible: false }))
       return
     }
     setErrors({})
     // execute reset password process
-    dispatch(setLoading(false))
+    dispatch(ConfigRTK.actions.setLoading({ visible: false }))
   }
 
   return (

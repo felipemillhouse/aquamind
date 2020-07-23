@@ -4,8 +4,9 @@ import * as Yup from 'yup'
 import { Platform } from 'react-native'
 
 import { LoginProps } from 'routes'
-import { setLoading, setAuthenticated } from 'store/config/actions'
-import { getUser } from 'store/user/actions'
+import ConfigRTK from 'store/config'
+import UserRTK from 'store/user'
+import { getUser as APIGetUser } from 'API/user'
 import Input from 'View/@Components/Input'
 import headerImage from 'assets/appImages/loginHeader.png'
 import { YupErrorsType, checkValidation } from 'helper'
@@ -51,20 +52,22 @@ const Login = ({ navigation }: LoginProps) => {
     //     cancelText: 'Cancel',
     //   }),
     // )
-    dispatch(setLoading(true))
+    dispatch(ConfigRTK.actions.setLoading({ visible: true }))
 
     const resultValidation = await checkValidation(errors, formValues, validation)
 
     if (resultValidation) {
       setErrors(resultValidation)
-      dispatch(setLoading(false))
+      dispatch(ConfigRTK.actions.setLoading({ visible: false }))
       return
     }
     setErrors({})
-
-    dispatch(getUser(1))
-    dispatch(setLoading(false))
-    dispatch(setAuthenticated(true))
+    const response = await APIGetUser(1)
+    if (response) {
+      dispatch(UserRTK.actions.setUser(response))
+      dispatch(ConfigRTK.actions.setLoading({ visible: false }))
+      dispatch(ConfigRTK.actions.setAuthenticated(true))
+    }
   }
 
   return (
