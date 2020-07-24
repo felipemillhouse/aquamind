@@ -21,6 +21,7 @@ import AddTankView from 'View/AddTank'
 import AddFertilizerView from 'View/AddFertilizer'
 import AddPlantView from 'View/AddPlant'
 import ProfileView from 'View/Profile'
+import ContactUsView from 'View/ContactUs'
 import { RootState } from 'store/rootReducer'
 import theme from 'View/@Theme'
 
@@ -51,6 +52,7 @@ type RootStackParamList = {
   createAccount: undefined
   forgotPassword: undefined
   profile: undefined
+  contactUs: undefined
   rooTabs: undefined
 }
 type RootTabParamList = {
@@ -159,6 +161,13 @@ type ProfileScreenRouteProp = RouteProp<RootStackParamList, 'profile'>
 export type ProfileProps = {
   navigation: ProfileScreenNavigationProp
   route: ProfileScreenRouteProp
+}
+// --- contactUs
+type ContactUsScreenNavigationProp = StackNavigationProp<RootStackParamList, 'contactUs'>
+type ContactUsScreenRouteProp = RouteProp<RootStackParamList, 'contactUs'>
+export type ContactUsProps = {
+  navigation: ContactUsScreenNavigationProp
+  route: ContactUsScreenRouteProp
 }
 
 const Routes: React.FC = () => {
@@ -291,6 +300,13 @@ const Routes: React.FC = () => {
             shadowColor: 'transparent',
             elevation: 0,
           },
+        }}
+      />
+      <Stack.Screen
+        name="contactUs"
+        component={ContactUsView}
+        options={{
+          title: 'Send us a Message',
         }}
       />
     </Stack.Navigator>
