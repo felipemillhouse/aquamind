@@ -47,7 +47,7 @@ export default ({ navigation }: ContactUsProps) => {
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       contentContainerStyle={{ flex: 1 }}
-      keyboardVerticalOffset={HeaderHeight || 0 + 64}
+      keyboardVerticalOffset={HeaderHeight + 64}
     >
       <ScrollView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
