@@ -68,7 +68,7 @@ const BottomDrawer: React.FC = () => {
                 <Drawer.Item
                   label="Send us a message"
                   icon="message-text-outline"
-                  onPress={() => console.log('message us')}
+                  onPress={() => hide('contactUs')}
                 />
                 <Drawer.Item
                   label="Credits"
