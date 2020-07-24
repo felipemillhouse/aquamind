@@ -12,7 +12,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1CA248B4DBE444928198771B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A425C0F96147B3BE29011F /* Roboto-Medium.ttf */; };
-		2B55989B4D14430384F6DF9C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87F08517992A4DB6B59FDC8F /* SimpleLineIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -357,7 +356,7 @@
 				1CA248B4DBE444928198771B /* Roboto-Medium.ttf in Resources */,
 				A97AFB7270874D928005D25B /* Roboto-Regular.ttf in Resources */,
 				7422A77F276C437591430794 /* Roboto-Thin.ttf in Resources */,
-				);
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E4791E0B4A5D006451C7 /* Resources */ = {
@@ -691,7 +690,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Aquamind/Aquamind.entitlements;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 266U6N9K96;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Aquamind/Info.plist;
@@ -717,7 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Aquamind/Aquamind.entitlements;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = 266U6N9K96;
 				INFOPLIST_FILE = Aquamind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
