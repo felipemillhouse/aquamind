@@ -7,6 +7,7 @@
     "ios": "npx react-native run-ios --simulator=\"iPhone 11 Pro\"",
     "start": "npx react-native start",
     "pod": "npx pod-install",
+    "podUpdate": "npx pod-install --repo-update",
     "images": "npx expo-optimize",
     "clean": "cd android && ./gradlew cleanBuildCache && ./gradlew clean",
     "reset": "yarn clean && rm -f ./yarn.lock && rm -rf ./node_modules && rm -f ./ios/Podfile.lock.lock && rm -rf ./ios/Pods && yarn install && yarn pod",
@@ -16,7 +17,6 @@
     "server": "json-server -p 3333 -d 500 --watch ./src/services/server.json"
   },
   "dependencies": {
-    "@expo-google-fonts/roboto": "^0.1.0",
     "@react-native-community/art": "^1.2.0",
     "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/masked-view": "^0.1.10",
@@ -27,7 +27,6 @@
     "@reduxjs/toolkit": "^1.4.0",
     "axios": "^0.19.2",
     "color": "^3.1.2",
-    "expo-font": "^8.2.1",
     "expo-notifications": "^0.4.0",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",

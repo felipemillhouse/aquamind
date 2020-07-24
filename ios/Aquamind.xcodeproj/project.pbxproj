@@ -11,14 +11,19 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1CA248B4DBE444928198771B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64A425C0F96147B3BE29011F /* Roboto-Medium.ttf */; };
+		2B55989B4D14430384F6DF9C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87F08517992A4DB6B59FDC8F /* SimpleLineIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* AquamindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AquamindTests.m */; };
 		6DE1035BF7DE317FE9E328C2 /* libPods-Aquamind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B32E30124374EF66F22F144 /* libPods-Aquamind.a */; };
+		7422A77F276C437591430794 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33202DB7B1114FF891E0844F /* Roboto-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8F9EDFFD24C94B5500A23FF7 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */; };
 		8FEFC69124C36DB00004DE4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */; };
+		A97AFB7270874D928005D25B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF3D5F0B2400423E8AB2A591 /* Roboto-Regular.ttf */; };
+		B9DC630350DB45E5ADBA8A1B /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1274F8595214F559E3C0CF2 /* Roboto-Light.ttf */; };
 		C5A2E9E15985BB9A5A338FCD /* libPods-Aquamind-AquamindTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F36FD6641BD6D81442298FE /* libPods-Aquamind-AquamindTests.a */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +58,16 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Aquamind/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Aquamind-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquamind-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Aquamind-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aquamind-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33202DB7B1114FF891E0844F /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		64A425C0F96147B3BE29011F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Aquamind/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Aquamind.entitlements; path = Aquamind/Aquamind.entitlements; sourceTree = "<group>"; };
 		8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		920AE01196CF291853BA329C /* Pods-Aquamind-AquamindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind-AquamindTests.release.xcconfig"; path = "Target Support Files/Pods-Aquamind-AquamindTests/Pods-Aquamind-AquamindTests.release.xcconfig"; sourceTree = "<group>"; };
 		A73D6623F5213E78782B8867 /* Pods-Aquamind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind.release.xcconfig"; path = "Target Support Files/Pods-Aquamind/Pods-Aquamind.release.xcconfig"; sourceTree = "<group>"; };
+		AF3D5F0B2400423E8AB2A591 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		B1274F8595214F559E3C0CF2 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		D5B2C53165757B8DB1E88994 /* Pods-Aquamind-AquamindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind-AquamindTests.debug.xcconfig"; path = "Target Support Files/Pods-Aquamind-AquamindTests/Pods-Aquamind-AquamindTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -159,6 +168,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				896751923113820FB4EA36BE /* Pods */,
+				903A7B8E93984BF7BA4BD077 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -185,6 +195,17 @@
 				920AE01196CF291853BA329C /* Pods-Aquamind-AquamindTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		903A7B8E93984BF7BA4BD077 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1274F8595214F559E3C0CF2 /* Roboto-Light.ttf */,
+				64A425C0F96147B3BE29011F /* Roboto-Medium.ttf */,
+				AF3D5F0B2400423E8AB2A591 /* Roboto-Regular.ttf */,
+				33202DB7B1114FF891E0844F /* Roboto-Thin.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +353,11 @@
 				8F9EDFFD24C94B5500A23FF7 /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-			);
+				B9DC630350DB45E5ADBA8A1B /* Roboto-Light.ttf in Resources */,
+				1CA248B4DBE444928198771B /* Roboto-Medium.ttf in Resources */,
+				A97AFB7270874D928005D25B /* Roboto-Regular.ttf in Resources */,
+				7422A77F276C437591430794 /* Roboto-Thin.ttf in Resources */,
+				);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E4791E0B4A5D006451C7 /* Resources */ = {
@@ -666,7 +691,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Aquamind/Aquamind.entitlements;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 266U6N9K96;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Aquamind/Info.plist;
@@ -692,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Aquamind/Aquamind.entitlements;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 266U6N9K96;
 				INFOPLIST_FILE = Aquamind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
