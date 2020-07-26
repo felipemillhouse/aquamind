@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker'
 import _ from 'lodash'
 
-import AvatarImg from 'assets/Avatar.png'
-import { TankDetailProps } from 'routes'
-import { RootState } from 'store/rootReducer'
-import { ConfigRTK } from 'store/config'
-import theme from 'View/Theme'
+import { TankDetailProps } from '../../routes'
+import { RootState } from '../../store/rootReducer'
+import { ConfigRTK } from '../../store/config'
+import theme from '../Theme'
+import AvatarImg from '../../assets/Avatar.png'
 import ThumbPhoto from './Components/ThumbPhoto'
 import {
   ButtonHeader,

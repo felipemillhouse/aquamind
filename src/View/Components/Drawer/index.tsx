@@ -4,14 +4,14 @@ import { useNavigation, CommonActions } from '@react-navigation/native'
 import { Portal, Drawer } from 'react-native-paper'
 import * as Animatable from 'react-native-animatable'
 import { useSelector, useDispatch } from 'react-redux'
-import { persistor } from 'store'
 
-import { RootState } from 'store/rootReducer'
-import UserRTK from 'store/user'
-import TanksRTK from 'store/tanks'
-import PlantsRTK from 'store/plants'
-import FertilizersRTK from 'store/fertilizers'
-import { ConfigRTK } from 'store/config'
+import { persistor } from '../../../store'
+import { RootState } from '../../../store/rootReducer'
+import UserRTK from '../../../store/user'
+import TanksRTK from '../../../store/tanks'
+import PlantsRTK from '../../../store/plants'
+import FertilizersRTK from '../../../store/fertilizers'
+import { ConfigRTK } from '../../../store/config'
 import {
   MainView,
   DialogContent,

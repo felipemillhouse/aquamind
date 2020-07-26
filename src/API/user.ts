@@ -1,5 +1,5 @@
-import API from 'services/api'
-import { UserState } from 'store/user'
+import API from '../services/api'
+import { UserState } from '../store/user'
 
 export async function getUser(userId: number) {
   try {

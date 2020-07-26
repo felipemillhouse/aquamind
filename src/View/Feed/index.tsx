@@ -3,8 +3,8 @@ import { View } from 'react-native'
 import { Title } from 'react-native-paper'
 import { useSelector } from 'react-redux'
 
-import { FeedProps } from 'routes'
-import { RootState } from 'store/rootReducer'
+import { FeedProps } from '../../routes'
+import { RootState } from '../../store/rootReducer'
 
 const Feed = ({ navigation }: FeedProps) => {
   return (

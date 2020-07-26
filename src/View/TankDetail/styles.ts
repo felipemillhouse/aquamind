@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { Button as PaperButton, Text, Divider as PaperDivider } from 'react-native-paper'
 
-import theme from 'View/Theme'
+import theme from '../Theme'
 import Slot from './Components/HeaderSlot'
 
 export const MainView = styled.View`

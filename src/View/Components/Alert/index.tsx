@@ -3,9 +3,9 @@ import { Portal, Dialog, Paragraph } from 'react-native-paper'
 import { useDispatch, useSelector } from 'react-redux'
 import _ from 'lodash'
 
-import { RootState } from 'store/rootReducer'
-import theme from 'View/Theme'
-import { ConfigRTK } from 'store/config'
+import { RootState } from '../../../store/rootReducer'
+import { ConfigRTK } from '../../../store/config'
+import theme from '../../Theme'
 
 import { Button } from './styles'
 

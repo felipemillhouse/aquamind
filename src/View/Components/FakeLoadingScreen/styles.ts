@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { ActivityIndicator } from 'react-native-paper'
 
-import theme from 'View/Theme'
+import theme from '../../Theme'
 
 export const MainView = styled.View`
   flex: 1;
