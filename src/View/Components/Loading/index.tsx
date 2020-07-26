@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { View } from 'react-native'
 
 import { RootState } from 'store/rootReducer'
-import ConfigRTK from 'store/config'
+import { ConfigRTK } from 'store/config'
 import { DialogContent, Spinner, Text, DialogView } from './styles'
 
 /**

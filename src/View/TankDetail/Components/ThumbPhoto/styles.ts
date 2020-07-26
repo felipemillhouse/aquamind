@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 export const MainView = styled.View`
   width: ${theme.sizes.width / 3}px;

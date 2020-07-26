@@ -4,10 +4,10 @@ import * as Yup from 'yup'
 import { Platform } from 'react-native'
 
 import { LoginProps } from 'routes'
-import ConfigRTK from 'store/config'
+import { ConfigRTK } from 'store/config'
 import UserRTK from 'store/user'
 import { getUser as APIGetUser } from 'API/user'
-import Input from 'View/@Components/Input'
+import Input from 'View/Components/Input'
 import headerImage from 'assets/appImages/loginHeader.png'
 import { YupErrorsType, checkValidation } from 'helper'
 import {

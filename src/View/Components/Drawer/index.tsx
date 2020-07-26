@@ -11,7 +11,7 @@ import UserRTK from 'store/user'
 import TanksRTK from 'store/tanks'
 import PlantsRTK from 'store/plants'
 import FertilizersRTK from 'store/fertilizers'
-import ConfigRTK from 'store/config'
+import { ConfigRTK } from 'store/config'
 import {
   MainView,
   DialogContent,

@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux'
 import { Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
 import { useHeaderHeight } from '@react-navigation/stack'
 
-import ConfigRTK from 'store/config'
+import { ConfigRTK } from 'store/config'
 import { ContactUsProps } from 'routes'
-import Input from 'View/@Components/Input'
+import Input from 'View/Components/Input'
 import { YupErrorsType, checkValidation } from 'helper'
 import { FormView, SendButton, KeyboardAvoidingView, ScrollView } from './styles'
 
