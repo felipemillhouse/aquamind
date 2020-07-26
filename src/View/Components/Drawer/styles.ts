@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import * as Animatable from 'react-native-animatable'
 import { TouchableRipple, Text } from 'react-native-paper'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 export const EmptyView = styled.View`
   flex: 1;

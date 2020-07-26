@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { ActivityIndicator, Paragraph, Dialog } from 'react-native-paper'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 export const DialogContent = styled(Dialog.Content)`
   flex: 1;

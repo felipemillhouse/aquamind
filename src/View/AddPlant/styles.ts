@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { Searchbar as PaperSearchbar, Text as PaperText, IconButton } from 'react-native-paper'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 export const MainView = styled.View`
   flex: 1;

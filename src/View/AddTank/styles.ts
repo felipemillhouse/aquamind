@@ -9,7 +9,7 @@ import {
   IconButton,
 } from 'react-native-paper'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 export const MainView = styled.ScrollView`
   background-color: ${theme.colors.surface};

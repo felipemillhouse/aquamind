@@ -6,12 +6,12 @@ import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker'
 import _ from 'lodash'
 
 import AvatarImg from 'assets/Avatar.png'
-import ConfigRTK from 'store/config'
+import { ConfigRTK } from 'store/config'
 import { ProfileProps } from 'routes'
 import { RootState } from 'store/rootReducer'
-import Input from 'View/@Components/Input'
+import Input from 'View/Components/Input'
 import { YupErrorsType, checkValidation } from 'helper'
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 import { MainView, HeaderView, Avatar, PhotoIcon, FormView, SaveButton } from './styles'
 
 type FormData = {

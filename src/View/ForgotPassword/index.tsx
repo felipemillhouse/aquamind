@@ -4,8 +4,8 @@ import * as Yup from 'yup'
 import { Platform } from 'react-native'
 
 import { ForgotPasswordProps } from 'routes'
-import ConfigRTK from 'store/config'
-import Input from 'View/@Components/Input'
+import { ConfigRTK } from 'store/config'
+import Input from 'View/Components/Input'
 import headerImage from 'assets/appImages/loginHeader.png'
 import { YupErrorsType, checkValidation } from 'helper'
 import {

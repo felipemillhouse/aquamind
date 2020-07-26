@@ -35,7 +35,7 @@ const initialState: ConfigState = {
   },
 }
 
-export default createSlice({
+const ConfigRTK = createSlice({
   name: 'config',
   initialState,
   reducers: {
@@ -72,3 +72,5 @@ export default createSlice({
     },
   },
 })
+
+export { ConfigRTK }

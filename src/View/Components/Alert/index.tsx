@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import _ from 'lodash'
 
 import { RootState } from 'store/rootReducer'
-import theme from 'View/@Theme'
-import ConfigRTK from 'store/config'
+import theme from 'View/Theme'
+import { ConfigRTK } from 'store/config'
 
 import { Button } from './styles'
 

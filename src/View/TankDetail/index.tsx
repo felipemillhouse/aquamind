@@ -6,8 +6,8 @@ import _ from 'lodash'
 import AvatarImg from 'assets/Avatar.png'
 import { TankDetailProps } from 'routes'
 import { RootState } from 'store/rootReducer'
-import ConfigRTK from 'store/config'
-import theme from 'View/@Theme'
+import { ConfigRTK } from 'store/config'
+import theme from 'View/Theme'
 import ThumbPhoto from './Components/ThumbPhoto'
 import {
   ButtonHeader,

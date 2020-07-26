@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { Text, IconButton } from 'react-native-paper'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 export const TankView = styled.View`
   flex: 1;

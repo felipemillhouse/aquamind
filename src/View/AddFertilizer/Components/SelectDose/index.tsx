@@ -6,9 +6,9 @@ import _ from 'lodash'
 import * as Yup from 'yup'
 
 import { YupErrorsType, checkValidation } from 'helper'
-import ConfigRTK from 'store/config'
-import Input from 'View/@Components/Input'
-import theme from 'View/@Theme'
+import { ConfigRTK } from 'store/config'
+import Input from 'View/Components/Input'
+import theme from 'View/Theme'
 
 import { Button } from './styles'
 

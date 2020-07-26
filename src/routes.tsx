@@ -9,7 +9,7 @@ import {
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { IconButton } from 'react-native-paper'
 
-import ConfigRTK from 'store/config'
+import { ConfigRTK } from 'store/config'
 import Feed from 'View/Feed'
 import Knowledge from 'View/Knowledge'
 import MyTanks from 'View/MyTanks'
@@ -23,7 +23,7 @@ import AddPlantView from 'View/AddPlant'
 import ProfileView from 'View/Profile'
 import ContactUsView from 'View/ContactUs'
 import { RootState } from 'store/rootReducer'
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 
 type FertilizerDoseDataType = {
   id: number

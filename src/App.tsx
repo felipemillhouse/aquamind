@@ -6,11 +6,11 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { Provider as PaperProvider } from 'react-native-paper'
 import { StatusBar } from 'react-native'
 
-import AppLoading from 'View/@Components/FakeLoadingScreen'
+import AppLoading from './View/Components/FakeLoadingScreen'
 import { store, persistor } from './store'
-import Loading from './View/@Components/Loading'
-import Alert from './View/@Components/Alert'
-import theme from './View/@Theme'
+import Loading from './View/Components/Loading'
+import Alert from './View/Components/Alert'
+import theme from './View/Theme'
 import Routes from './routes'
 
 const App: React.FC = () => {

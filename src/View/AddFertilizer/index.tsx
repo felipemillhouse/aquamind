@@ -6,7 +6,7 @@ import _ from 'lodash'
 
 import { AddFertilizerProps } from 'routes'
 import { RootState } from 'store/rootReducer'
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 import SelectDose from './Components/SelectDose'
 import { MainView, Searchbar, ScrollView, Text, Icon, RowView } from './styles'
 

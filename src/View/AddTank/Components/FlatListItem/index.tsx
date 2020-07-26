@@ -1,6 +1,6 @@
 import React from 'react'
 
-import theme from 'View/@Theme'
+import theme from 'View/Theme'
 import { Description, View, Icon, RowView } from './styles'
 
 type FlatListItemType = {
