@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 import { Image } from 'react-native'
 import { Title, Subheading, Button } from 'react-native-paper'
 
-import theme from 'View/Theme'
+import theme from '../Theme'
 
 export const Container = styled.View`
   background-color: ${theme.colors.surface};

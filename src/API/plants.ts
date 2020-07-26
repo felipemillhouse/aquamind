@@ -1,5 +1,5 @@
-import API from 'services/api'
-import { PlantsState } from 'store/plants'
+import API from '../services/api'
+import { PlantsState } from '../store/plants'
 
 export async function getPlants() {
   try {

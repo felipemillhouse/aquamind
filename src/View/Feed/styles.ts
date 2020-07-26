@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import * as Animatable from 'react-native-animatable'
 
-import theme from 'View/Theme'
+import theme from '../Theme'
 
 export const MainView = styled(Animatable.View)`
   flex: 1;

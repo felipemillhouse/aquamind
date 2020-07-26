@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import { View } from 'react-native'
 import _ from 'lodash'
 
-import { AddPlantProps } from 'routes'
-import { ConfigRTK } from 'store/config'
-import { RootState } from 'store/rootReducer'
-import theme from 'View/Theme'
+import { AddPlantProps } from '../../routes'
+import { ConfigRTK } from '../../store/config'
+import { RootState } from '../../store/rootReducer'
+import theme from '../Theme'
 import { MainView, Searchbar, ScrollView, Text, Icon, RowView } from './styles'
 
 const AddPlant = ({ route, navigation }: AddPlantProps) => {

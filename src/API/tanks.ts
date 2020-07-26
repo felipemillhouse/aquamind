@@ -1,5 +1,5 @@
-import API from 'services/api'
-import { TanksState } from 'store/tanks'
+import API from '../services/api'
+import { TanksState } from '../store/tanks'
 
 export async function getTanks(userId: number) {
   try {

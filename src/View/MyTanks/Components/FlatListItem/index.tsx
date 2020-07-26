@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AvatarImg from 'assets/Avatar.png'
+import AvatarImg from '../../../../assets/Avatar.png'
 import {
   RowView,
   TankView,

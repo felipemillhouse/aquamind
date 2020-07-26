@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { Text, Title as PaperTitle } from 'react-native-paper'
 
-import theme from 'View/Theme'
+import theme from '../../../Theme'
 
 export const MainView = styled.View`
   background-color: ${theme.colors.background};

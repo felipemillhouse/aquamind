@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { Title, Button, Text, IconButton, TouchableRipple } from 'react-native-paper'
 
-import theme from 'View/Theme'
+import theme from '../Theme'
 
 export const MainView = styled.SafeAreaView`
   flex: 1;
