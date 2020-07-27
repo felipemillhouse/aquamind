@@ -30,23 +30,19 @@ const theme: MyTheme = {
   ...DefaultTheme,
   fonts: {
     regular: {
-      fontFamily: 'System',
-      // fontFamily: 'Roboto-Regular',
+      fontFamily: 'Roboto-Regular',
       fontWeight: '400' as '400',
     },
     medium: {
-      fontFamily: 'System',
-      // fontFamily: 'Roboto-Medium',
+      fontFamily: 'Roboto-Medium',
       fontWeight: '500' as '500',
     },
     light: {
-      fontFamily: 'System',
-      // fontFamily: 'Roboto-Light',
+      fontFamily: 'Roboto-Light',
       fontWeight: '300' as '300',
     },
     thin: {
-      fontFamily: 'System',
-      // fontFamily: 'Roboto-Thin',
+      fontFamily: 'Roboto-Thin',
       fontWeight: '100' as '100',
     },
     sizes: {

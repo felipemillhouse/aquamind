@@ -5,12 +5,44 @@
       "name": "Felipe",
       "username": "FelipeSantos",
       "avatar": "https://previews.123rf.com/images/yupiramos/yupiramos1802/yupiramos180229973/96297654-young-man-model-with-glasses-avatar-character-vector-illustration-design.jpg"
+    }
+  ],
+  "feed": [
+    {
+      "feedId": 1,
+      "userName": "JenifferAniston",
+      "dimensions": "60x30x35",
+      "userAvatar": "https://media1.popsugar-assets.com/files/thumbor/YTGMXmgXl4YjThJOLB1L3gP8JvY/207x134:1865x1792/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2019/09/09/028/n/1922398/066318895d76e2ef0c31d8.46065434_/i/Jennifer-Aniston.jpg",
+      "photoUrl": "https://cdn.shopify.com/s/files/1/0311/3149/articles/fertilizer_e5e5f84c-2451-4e55-b7e3-6337b020afc4_560x.jpg",
+      "width": 560,
+      "height": 374,
+      "likes": 45,
+      "comments": 12,
+      "date": "2020-06-05"
     },
     {
-      "id": 2,
-      "name": "Felipinho",
-      "username": "felipinhoSantos",
-      "avatar": "https://previews.123rf.com/images/yupiramos/yupiramos1802/yupiramos180229973/96297654-young-man-model-with-glasses-avatar-character-vector-illustration-design.jpg"
+      "feedId": 2,
+      "userName": "FilipeOliveira",
+      "dimensions": "120x45x45",
+      "userAvatar": "https://scontent.fyyz1-2.fna.fbcdn.net/v/t1.0-9/102561743_3984817498257459_7228559342452767838_n.jpg?_nc_cat=108&_nc_sid=85a577&_nc_ohc=mDKYqEd-9_8AX9vA6tx&_nc_ht=scontent.fyyz1-2.fna&oh=3b5b7fe60064c74654aff0a1a6296798&oe=5F4649A6",
+      "photoUrl": "https://live.staticflickr.com/65535/48134032922_59bd7890f2_b.jpg",
+      "width": 1024,
+      "height": 683,
+      "likes": 545,
+      "comments": 112,
+      "date": "2020-04-05"
+    },
+    {
+      "feedId": 3,
+      "userName": "BalázsFarkas",
+      "dimensions": "150x60x50",
+      "userAvatar": "https://hac-aquascaping-contest.com/wp-content/uploads/2018/07/farkas-balazs.jpg",
+      "photoUrl": "http://live.staticflickr.com/65535/50062571716_a6c9b102bb_k.jpg",
+      "width": 2048,
+      "height": 1366,
+      "likes": 458,
+      "comments": 125,
+      "date": "2020-02-05"
     }
   ],
   "tanks": [
@@ -26,25 +58,6 @@
       "comments": 3,
       "coverImageURL": null,
       "userId": 1,
-      "co2": 1.5,
-      "lightPeriod": 5,
-      "lightModel": "Chihiros RGB VIVID 2",
-      "gravel": "ADA Amazonia",
-      "filter": "Oase Indoor Aquatics Biomaster 250",
-      "allPhotos": []
-    },
-    {
-      "id": 2,
-      "bornAt": "2020-06-05",
-      "length": 90,
-      "width": 45,
-      "height": 45,
-      "title": "Tank 2",
-      "likes": 240,
-      "photos": 45,
-      "comments": 10,
-      "coverImageURL": "undefined",
-      "userId": 2,
       "co2": 1.5,
       "lightPeriod": 5,
       "lightModel": "Chihiros RGB VIVID 2",
