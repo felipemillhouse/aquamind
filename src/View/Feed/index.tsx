@@ -11,6 +11,7 @@ import Footer from './Components/Footer'
 import { RootState } from '../../store/rootReducer'
 import { getFeed } from '../../API/feed'
 import { FeedImage } from './styles'
+import PhotoBox from './Components/PhotoBox'
 
 const Feed = ({ navigation }: FeedProps) => {
   const dispatch = useDispatch()
@@ -38,11 +39,7 @@ const Feed = ({ navigation }: FeedProps) => {
           dimensions={feed[0]?.dimensions}
           date={feed[0]?.date}
         />
-        <FeedImage
-          source={{ uri: feed[0]?.photoUrl }}
-          width={feed[0]?.width}
-          height={feed[0]?.height}
-        />
+        <PhotoBox uri={feed[0]?.photoUrl} width={feed[0]?.width} height={feed[0]?.height} />
         <Footer liked likes={feed[0]?.likes} comments={feed[0]?.comments} />
       </View>
       <View>
@@ -52,11 +49,7 @@ const Feed = ({ navigation }: FeedProps) => {
           dimensions={feed[1]?.dimensions}
           date={feed[1]?.date}
         />
-        <FeedImage
-          source={{ uri: feed[1]?.photoUrl }}
-          width={feed[1]?.width}
-          height={feed[1]?.height}
-        />
+        <PhotoBox uri={feed[1]?.photoUrl} width={feed[1]?.width} height={feed[1]?.height} />
         <Footer liked likes={feed[1]?.likes} comments={feed[1]?.comments} />
       </View>
       <View>
@@ -66,11 +59,7 @@ const Feed = ({ navigation }: FeedProps) => {
           dimensions={feed[2]?.dimensions}
           date={feed[2]?.date}
         />
-        <FeedImage
-          source={{ uri: feed[2]?.photoUrl }}
-          width={feed[2]?.width}
-          height={feed[2]?.height}
-        />
+        <PhotoBox uri={feed[2]?.photoUrl} width={feed[2]?.width} height={feed[2]?.height} />
         <Footer liked likes={feed[2]?.likes} comments={feed[2]?.comments} />
       </View>
     </ScrollView>
