@@ -1,3 +1,5 @@
+// resources: https://www.youtube.com/watch?v=MukiK57qwVY
+
 import React, { useState } from 'react'
 import { Animated } from 'react-native'
 import {
@@ -70,7 +72,6 @@ const PhotoBox = ({ uri, width, height }: PhotoBoxProps) => {
     }
   }
 
-  console.log({ onPinchEvent })
   return (
     <PinchGestureHandler
       onGestureEvent={onPinchEvent}
