@@ -8,6 +8,7 @@ export const RowView = styled.View`
   align-items: center;
   padding: ${theme.sizes.margin}px;
   width: ${theme.sizes.width}px;
+  z-index: 2;
 `
 export const Avatar = styled.Image`
   width: 34px;

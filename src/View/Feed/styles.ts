@@ -1,11 +1,10 @@
 import styled from 'styled-components/native'
-import * as Animatable from 'react-native-animatable'
 
 import theme from '../Theme'
 
-export const MainView = styled(Animatable.View)`
+export const ScrollView = styled.ScrollView`
   flex: 1;
-  background-color: ${theme.colors.backdrop};
+  background-color: ${theme.colors.surface};
 `
 type FeedImageProps = {
   width: number
