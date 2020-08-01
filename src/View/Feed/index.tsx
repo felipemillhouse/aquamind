@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react'
-import { View } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
+import _ from 'lodash'
 
 import FakeLoadingScreen from '../Components/FakeLoadingScreen'
 import { FeedProps } from '../../routes'
 import { ConfigRTK } from '../../store/config'
 import FeedRTK from '../../store/feed'
-import UserHeader from './Components/UserHeader'
-import Footer from './Components/Footer'
 import { RootState } from '../../store/rootReducer'
 import { getFeed } from '../../API/feed'
 import { ScrollView } from './styles'
-import PhotoBox from './Components/PhotoBox'
+import FeedBox from './Components/FeedBox'
 
 const Feed = ({ navigation }: FeedProps) => {
   const dispatch = useDispatch()
@@ -32,32 +30,9 @@ const Feed = ({ navigation }: FeedProps) => {
   }
   return (
     <ScrollView>
-      <UserHeader
-        userName={feed[0]?.userName}
-        url={feed[0]?.userAvatar}
-        dimensions={feed[0]?.dimensions}
-        date={feed[0]?.date}
-      />
-      <PhotoBox uri={feed[0]?.photoUrl} width={feed[0]?.width} height={feed[0]?.height} />
-      <Footer liked likes={feed[0]?.likes} comments={feed[0]?.comments} />
-
-      <UserHeader
-        userName={feed[1]?.userName}
-        url={feed[1]?.userAvatar}
-        dimensions={feed[1]?.dimensions}
-        date={feed[1]?.date}
-      />
-      <PhotoBox uri={feed[1]?.photoUrl} width={feed[1]?.width} height={feed[1]?.height} />
-      <Footer liked likes={feed[1]?.likes} comments={feed[1]?.comments} />
-
-      <UserHeader
-        userName={feed[2]?.userName}
-        url={feed[2]?.userAvatar}
-        dimensions={feed[2]?.dimensions}
-        date={feed[2]?.date}
-      />
-      <PhotoBox uri={feed[2]?.photoUrl} width={feed[2]?.width} height={feed[2]?.height} />
-      <Footer liked likes={feed[2]?.likes} comments={feed[2]?.comments} />
+      {_.map(feed, item => (
+        <FeedBox key={item.feedId} feed={item} />
+      ))}
     </ScrollView>
   )
 }
