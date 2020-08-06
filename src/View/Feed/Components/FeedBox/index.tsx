@@ -3,10 +3,11 @@
 import React from 'react'
 import { StyleSheet, View, Alert } from 'react-native'
 import { State, PinchGestureHandler } from 'react-native-gesture-handler'
-import Animated, { block, cond, eq, set, useCode } from 'react-native-reanimated'
+import Animated, { block, cond, eq, set, useCode, multiply, divide } from 'react-native-reanimated'
 import {
   pinchActive,
   pinchBegan,
+  pinchEnd,
   transformOrigin,
   translate,
   vec,
@@ -34,8 +35,8 @@ export default ({ feed }: FeedBoxProps) => {
   const zIndex = cond(eq(state, State.ACTIVE), 10, 1)
   const adjustedFocal = vec.add(
     {
-      x: -ratioWidth / 2,
-      y: -ratioHeight / 2,
+      x: multiply(-1, divide(ratioWidth, 2)),
+      y: multiply(-1, divide(ratioHeight, 2)),
     },
     focal,
   )
@@ -48,7 +49,7 @@ export default ({ feed }: FeedBoxProps) => {
           pinchActive(state, numberOfPointers),
           vec.set(pinch, vec.minus(vec.sub(origin, adjustedFocal))),
         ),
-        cond(eq(state, State.END), [
+        cond(pinchEnd(state, numberOfPointers), [
           set(pinch.x, spring({ from: pinch.x, to: 0, config: { mass: 0.5, damping: 10 } })),
           set(pinch.y, spring({ from: pinch.y, to: 0, config: { mass: 0.5, damping: 10 } })),
           set(scale, spring({ from: scale, to: 1, config: { mass: 0.5, damping: 10 } })),
