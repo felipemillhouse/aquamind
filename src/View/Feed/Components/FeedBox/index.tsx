@@ -1,9 +1,19 @@
 // resources: https://www.youtube.com/watch?v=MukiK57qwVY
 
 import React from 'react'
-import { StyleSheet, View, Alert } from 'react-native'
+import { StyleSheet, Alert } from 'react-native'
 import { State, PinchGestureHandler } from 'react-native-gesture-handler'
-import Animated, { block, cond, eq, set, useCode, multiply, divide } from 'react-native-reanimated'
+import Animated, {
+  block,
+  cond,
+  eq,
+  set,
+  useCode,
+  multiply,
+  divide,
+  interpolate,
+  Extrapolate,
+} from 'react-native-reanimated'
 import {
   pinchActive,
   pinchBegan,
@@ -32,7 +42,8 @@ export default ({ feed }: FeedBoxProps) => {
   const { gestureHandler, numberOfPointers, state, scale, focal } = usePinchGestureHandler()
   const origin = vec.createValue(0, 0)
   const pinch = vec.createValue(0, 0)
-  const zIndex = cond(eq(state, State.ACTIVE), 10, 1)
+  const zIndex = cond(eq(state, State.ACTIVE), 10, 2)
+  const zIndexOverlay = cond(eq(state, State.ACTIVE), 9, 0)
   const adjustedFocal = vec.add(
     {
       x: multiply(-1, divide(ratioWidth, 2)),
@@ -40,6 +51,11 @@ export default ({ feed }: FeedBoxProps) => {
     },
     focal,
   )
+  const opacity = interpolate(scale, {
+    inputRange: [1, 2],
+    outputRange: [0, 0.8],
+    extrapolate: Extrapolate.CLAMP,
+  })
 
   useCode(
     () =>
@@ -79,10 +95,17 @@ export default ({ feed }: FeedBoxProps) => {
               }}
             />
           </DoubleTap>
-          <View style={{ flex: 1, backgroundColor: theme.colors.background }} />
         </Animated.View>
       </PinchGestureHandler>
       <Footer liked likes={feed.likes} comments={feed.comments} />
+      <Animated.View
+        style={{
+          ...StyleSheet.absoluteFillObject,
+          backgroundColor: theme.colors.onBackground,
+          zIndex: zIndexOverlay,
+          opacity,
+        }}
+      />
     </>
   )
 }
