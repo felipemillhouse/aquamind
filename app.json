@@ -4,7 +4,6 @@
   "expo": {
     "name": "Aquamind",
     "slug": "aquamind-care",
-    "sdkVersion": "38.0.0",
     "android": {
       "package": "app.aquamind",
       "googleServicesFile": "./android/app/google-services.json",

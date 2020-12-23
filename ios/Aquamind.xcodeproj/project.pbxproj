@@ -19,7 +19,6 @@
 		6DE1035BF7DE317FE9E328C2 /* libPods-Aquamind.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B32E30124374EF66F22F144 /* libPods-Aquamind.a */; };
 		7422A77F276C437591430794 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33202DB7B1114FF891E0844F /* Roboto-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* SplashScreen.storyboard */; };
-		8F84DDD224C3529300CC4D0B /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F84DDD124C3529300CC4D0B /* Expo.plist */; };
 		8F9EDFFD24C94B5500A23FF7 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */; };
 		8FEFC69124C36DB00004DE4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */; };
 		A97AFB7270874D928005D25B /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF3D5F0B2400423E8AB2A591 /* Roboto-Regular.ttf */; };
@@ -62,7 +61,6 @@
 		64A425C0F96147B3BE29011F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Aquamind/SplashScreen.storyboard; sourceTree = "<group>"; };
 		8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Aquamind.entitlements; path = Aquamind/Aquamind.entitlements; sourceTree = "<group>"; };
-		8F84DDD124C3529300CC4D0B /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		920AE01196CF291853BA329C /* Pods-Aquamind-AquamindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquamind-AquamindTests.release.xcconfig"; path = "Target Support Files/Pods-Aquamind-AquamindTests/Pods-Aquamind-AquamindTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				8FEFC69024C36DB00004DE4C /* GoogleService-Info.plist */,
-				8F84DDD024C3529300CC4D0B /* Supporting */,
 				8F84DDCF24C34A3B00CC4D0B /* Aquamind.entitlements */,
 				8F9EDFFC24C94B5500A23FF7 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -197,15 +194,6 @@
 				920AE01196CF291853BA329C /* Pods-Aquamind-AquamindTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		8F84DDD024C3529300CC4D0B /* Supporting */ = {
-			isa = PBXGroup;
-			children = (
-				8F84DDD124C3529300CC4D0B /* Expo.plist */,
-			);
-			name = Supporting;
-			path = Aquamind/Supporting;
 			sourceTree = "<group>";
 		};
 		903A7B8E93984BF7BA4BD077 /* Resources */ = {
@@ -360,7 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F84DDD224C3529300CC4D0B /* Expo.plist in Resources */,
 				8FEFC69124C36DB00004DE4C /* GoogleService-Info.plist in Resources */,
 				8F9EDFFD24C94B5500A23FF7 /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* SplashScreen.storyboard in Resources */,
