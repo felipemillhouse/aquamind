@@ -18,7 +18,7 @@ public class BasePackageList {
         new expo.modules.location.LocationPackage(),
         new expo.modules.notifications.NotificationsPackage(),
         new expo.modules.permissions.PermissionsPackage(),
-        new expo.modules.splashscreen.SplashScreenPackage(),
+        new expo.modules.securestore.SecureStorePackage(),
         new expo.modules.sqlite.SQLitePackage()
     );
   }
