@@ -1,9 +1,10 @@
 import styled from 'styled-components/native'
-import { Image } from 'react-native'
+import { Image, Dimensions } from 'react-native'
 import { Title, Subheading, Button } from 'react-native-paper'
 
 import theme from '../Theme'
 
+const { width } = Dimensions.get('window')
 export const Container = styled.View`
   background-color: ${theme.colors.surface};
   flex: 1;
@@ -24,6 +25,8 @@ export const AppSubTitle = styled(Subheading)`
 `
 export const ImageHeader = styled(Image)`
   background-color: ${theme.colors.surface};
+  width: ${width}px;
+  resize-mode: cover;
 `
 export const LoginButton = styled(Button).attrs({
   mode: 'contained',
