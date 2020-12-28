@@ -4,9 +4,9 @@ import * as Yup from 'yup'
 import { View, Platform } from 'react-native'
 import { optimizeHeavyScreen } from 'react-navigation-heavy-screen'
 import { SwipeRow } from 'react-native-swipe-list-view'
-import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker'
 import { TouchableRipple } from 'react-native-paper'
 import _ from 'lodash'
+import { pickImage, YupErrorsType, checkValidation } from '../../helper'
 
 import { addTankProps } from '../../routes'
 import EmptyImage from '../../assets/coverVoidImage.png'
@@ -19,7 +19,7 @@ import { getFertilizers } from '../../API/fertilizers'
 import PlantsRTK from '../../store/plants'
 import FertilizersRTK from '../../store/fertilizers'
 import { RootState } from '../../store/rootReducer'
-import { YupErrorsType, checkValidation } from '../../helper'
+
 import Input from '../Components/Input'
 import FlatListItem from './Components/FlatListItem'
 import {
@@ -311,30 +311,21 @@ const AddTank = ({ navigation, route }: addTankProps) => {
    ************************************************* */
 
   const takePicture = async () => {
-    const options: ImagePickerOptions = {
-      title: 'Select Photo',
-      mediaType: 'photo',
-      noData: true,
-      maxWidth: 500,
-      maxHeight: 500,
-      allowsEditing: true,
-      quality: 0.8,
+    const image = await pickImage()
+    if (!image) {
+      dispatch(
+        ConfigRTK.actions.setAlert({
+          visible: true,
+          alertTitle: 'Oops!',
+          alertMessage: 'Sorry, we need camera roll permissions to make this work!',
+          okText: 'Ok',
+        }),
+      )
+      return
     }
-
-    ImagePicker.showImagePicker(options, async response => {
-      if (response.error) {
-        dispatch(
-          ConfigRTK.actions.setAlert({
-            visible: true,
-            alertTitle: 'Oops! Something went wrong',
-            alertMessage: response.error,
-            okText: 'Ok',
-          }),
-        )
-      } else if (!response.didCancel) {
-        setCoverImage(response.uri)
-      }
-    })
+    if (!image.cancelled) {
+      setCoverImage(image.uri)
+    }
   }
 
   return (

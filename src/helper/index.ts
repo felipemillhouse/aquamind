@@ -2,6 +2,7 @@ import clone from 'lodash/clone'
 import toPath from 'lodash/toPath'
 import keys from 'lodash/keys'
 import * as Yup from 'yup'
+import * as ImagePicker from 'expo-image-picker'
 
 export type YupErrorsType<Values> = {
   [K in keyof Values]?: Values[K] extends any[]
@@ -100,4 +101,18 @@ export async function checkValidation(
     }
   }
   return null
+}
+
+export const pickImage = async () => {
+  const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync()
+  if (status !== 'granted') {
+    return false
+  }
+  const result = await ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    allowsEditing: true,
+    aspect: [1, 1],
+    quality: 1,
+  })
+  return result
 }

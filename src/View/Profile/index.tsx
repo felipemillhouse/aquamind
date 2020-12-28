@@ -2,15 +2,15 @@ import React, { useState, useCallback } from 'react'
 import * as Yup from 'yup'
 import { TouchableRipple } from 'react-native-paper'
 import { useSelector, useDispatch } from 'react-redux'
-import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker'
 import _ from 'lodash'
 
+import { pickImage } from '../../helper'
 import AvatarImg from '../../assets/Avatar.png'
 import { ConfigRTK } from '../../store/config'
 import { ProfileProps } from '../../routes'
 import { RootState } from '../../store/rootReducer'
 import Input from '../Components/Input'
-import { YupErrorsType, checkValidation } from '../../helper'
+
 import theme from '../Theme'
 import { MainView, HeaderView, Avatar, PhotoIcon, FormView, SaveButton } from './styles'
 
@@ -34,30 +34,21 @@ const Profile = ({ navigation }: ProfileProps) => {
   })
 
   const takePicture = async () => {
-    const options: ImagePickerOptions = {
-      title: 'Select Photo',
-      mediaType: 'photo',
-      noData: true,
-      maxWidth: 768,
-      maxHeight: 768,
-      allowsEditing: true,
-      quality: 0.8,
+    const image = await pickImage()
+    if (!image) {
+      dispatch(
+        ConfigRTK.actions.setAlert({
+          visible: true,
+          alertTitle: 'Oops!',
+          alertMessage: 'Sorry, we need camera roll permissions to make this work!',
+          okText: 'Ok',
+        }),
+      )
+      return
     }
-
-    ImagePicker.showImagePicker(options, async response => {
-      if (response.error) {
-        dispatch(
-          ConfigRTK.actions.setAlert({
-            visible: true,
-            alertTitle: 'Oops! Something went wrong',
-            alertMessage: response.error,
-            okText: 'Ok',
-          }),
-        )
-      } else if (!response.didCancel) {
-        setAvatar(response.uri)
-      }
-    })
+    if (!image.cancelled) {
+      setAvatar(image.uri)
+    }
   }
 
   const Save = async () => {

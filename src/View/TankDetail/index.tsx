@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import ImagePicker, { ImagePickerOptions } from 'react-native-image-picker'
+
 import _ from 'lodash'
 
+import { pickImage } from '../../helper'
 import { TankDetailProps } from '../../routes'
 import { RootState } from '../../store/rootReducer'
 import { ConfigRTK } from '../../store/config'
@@ -53,50 +54,32 @@ const TankDetail = ({ navigation, route }: TankDetailProps) => {
   }
 
   const takePicture = async () => {
-    const options: ImagePickerOptions = {
-      title: 'Select Photo',
-      mediaType: 'photo',
-      noData: true,
-      maxWidth: 1080,
-      maxHeight: 1080,
-      allowsEditing: true,
-      quality: 0.8,
+    const image = await pickImage()
+    if (!image) {
+      dispatch(
+        ConfigRTK.actions.setAlert({
+          visible: true,
+          alertTitle: 'Oops!',
+          alertMessage: 'Sorry, we need camera roll permissions to make this work!',
+          okText: 'Ok',
+        }),
+      )
+      return
     }
-
-    ImagePicker.showImagePicker(options, async response => {
-      if (response.error) {
+    if (!image.cancelled) {
+      if (image.height > image.width + 30) {
         dispatch(
           ConfigRTK.actions.setAlert({
             visible: true,
-            alertTitle: 'Oops! Something went wrong',
-            alertMessage: response.error,
+            alertTitle: 'Oops! Vertical Image',
+            alertMessage: 'Please, do not use vertical images',
             okText: 'Ok',
           }),
         )
-      } else if (!response.didCancel) {
-        console.log({ response })
-        if (response.height > response.width + 30) {
-          dispatch(
-            ConfigRTK.actions.setAlert({
-              visible: true,
-              alertTitle: 'Oops! Vertical Image',
-              alertMessage: 'Please, do not use vertical images',
-              okText: 'Ok',
-            }),
-          )
-        } else {
-          console.log({ response })
-        }
-        // upload image
-        /**
-         * response.width
-         * response.height
-         * wRatio: response.width / response.height
-         * uri: response.uri
-         * tankId: tank?.id
-         */
+        return
       }
-    })
+      console.log({ image })
+    }
   }
 
   return (

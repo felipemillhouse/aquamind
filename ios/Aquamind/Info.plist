@@ -43,6 +43,8 @@
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like to save photos to your photo gallery for you are able to store your pictures</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Give $(PRODUCT_NAME) permission to use your microphone to record videos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) would like access to your photo gallery for you are able to select pictures and send them to your feed</string>
 	<key>UIAppFonts</key>
